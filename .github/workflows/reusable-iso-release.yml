@@ -105,6 +105,9 @@ jobs:
           fi
           echo "IMAGE_VARIANT=${IMAGE_VARIANT}" >> $GITHUB_ENV
 
+          TIMESTAMP="$(date +%Y%m%d)"
+          echo "TIMESTAMP=${TIMESTAMP}" >> $GITHUB_ENV
+
 
       - name: Build ISOs
         uses: ublue-os/isogenerator@1.0.9
@@ -124,5 +127,5 @@ jobs:
         with:
           access-key: ${{ secrets.IA_ACCESS_KEY }}
           secret-key: ${{ secrets.IA_SECRET_KEY }}
-          identifier: ${{ env.IMAGE_NAME }}-${{ matrix.fedora_version}}
+          identifier: ${{ env.IMAGE_NAME }}-${{ env.TIMESTAMP }}
           files: ${{ steps.build.outputs.output-directory }}
