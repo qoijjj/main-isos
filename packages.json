@@ -3,6 +3,7 @@
         "include": {
             "all": [
                 "alsa-firmware",
+                "android-tools",
                 "android-udev-rules",
                 "apr",
                 "apr-util",
