@@ -7,7 +7,7 @@ on:
         required: true
         type: string
 env:
-  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  IMAGE_REGISTRY: ghcr.io/ublue-os
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.fedora_version }}
@@ -223,7 +223,7 @@ jobs:
         id: registry_case
         uses: ASzc/change-string-case-action@v6
         with:
-          string: ${{ env.IMAGE_REGISTRY }}
+          string: ghcr.io/qoijjj
 
       - name: Push To GHCR
         uses: Wandalen/wretry.action@v3.5.0
