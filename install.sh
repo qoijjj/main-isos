@@ -24,6 +24,8 @@ rpm-ostree install \
     /tmp/akmods-rpms/*.rpm \
     fedora-repos-archive
 
+systemctl restart rpm-ostreed
+
 # Handle Kernel Skew with override replace
 rpm-ostree cliwrap install-to-root /
 if [[ "${KERNEL_VERSION}" == "${QUALIFIED_KERNEL}" ]]; then
